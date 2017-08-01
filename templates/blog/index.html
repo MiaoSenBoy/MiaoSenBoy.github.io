@@ -1,0 +1,50 @@
+{% extends "base.html"%}
+
+
+{% block body %}
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/static/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="site-heading">
+                        <h1>MiaoSen Blog</h1>
+                        <span class="subheading">Welcome to my blog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                {% for blog in blog_list %}
+                <div class="post-preview">
+                    <a href="post.html">
+
+                        <h2 class="post-title">
+
+                            {{ blog.blog_title }}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{ blog.blog_text }}
+                        </h3>
+
+                    </a>
+                    <p class="post-meta">发布者 <a href="#">Start Bootstrap</a> {{ blog.blog_date }}</p>
+                </div>
+                <hr>
+                {% endfor %}
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="btn btn-secondary float-right" href="#">旧的文章 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+{% endblock body %}
+

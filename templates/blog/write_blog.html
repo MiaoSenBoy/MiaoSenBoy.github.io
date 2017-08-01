@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+
+{% block body %}
+    <style>
+
+
+        .text_bianji {
+            width: 1000px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        #btn{
+            width: 100px;
+            height: 40px;
+            float: right;
+            margin-top: -40px;
+        }
+
+    </style>
+     <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/static/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="site-heading">
+                        <h1>MiaoSen Blog</h1>
+                        <span class="subheading">来写点什么吧..</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="text_bianji">
+        <form method="post" action="/get_blog/">
+            <p>博客标题: <input name="blog_biaoti" type="text"></p>
+
+            <p>博客内容: <textarea name="blog_text" rows="10" cols="82">想你所想,写你所写!</textarea></p>
+
+            <input type="submit" name="blog_fabu" value="发布" id="btn">
+        </form>
+    </div>
+
+
+{% endblock body %}
